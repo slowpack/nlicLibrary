@@ -1,4 +1,5 @@
 {
+  "homepage": ".",
   "private": true,
   "author": "wp <wp@gmail.com>",
   "scripts": {
