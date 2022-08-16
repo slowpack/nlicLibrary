@@ -1,6 +1,6 @@
 import routes from './routes'
 import { defineConfig } from '@umijs/max';
-
+import { defaultSettings } from "./defaultSettings";
 export default defineConfig({
   antd: {},
   access: {},
@@ -8,9 +8,13 @@ export default defineConfig({
   initialState: {},
   request: {},
   layout: {
-    
-    title: '@umijs/max',
+    locale: false,
+    siderWidth: 208,
+    ...defaultSettings,
   },
-  routes: routes,
+ routes,
   npmClient: 'pnpm',
+  // dynamicImport: {
+  //   loading: '@ant-design/pro-layout/es/PageLoading',
+  // },
 });

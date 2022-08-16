@@ -12,7 +12,9 @@ export default [
     {
       name: '登录',
       path: '/login',
-      component: './Login',      hideInMenu:true
+      component: './Login',      
+      hideInMenu:true,
+      menuRender: false
     },
     {
       name: '馆藏搜索',
