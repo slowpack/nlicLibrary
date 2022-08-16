@@ -7,27 +7,30 @@ export default [
       name: '首页',
       path: '/home',
       component: './Home',
-      headerRender: false,
+      layout: 'mix',
     },
     {
       name: '登录',
       path: '/login',
       component: './Login',      hideInMenu:true
     },
-    // {
-    //   name: '借阅历史',
-    //   path: '/borrowHistory',
-    //   component: './borrowHistory',
-    // },
+    {
+      name: '馆藏搜索',
+      path: '/bookSearch',
+      component: './Table',
+      layout: 'mix',
+    },
     {
       name: '借阅历史',
       path: '/borrowHistory',
       component: './Table',
+      layout: 'mix',
     },
     {
       name: '读者权限查询',
       path: '/readerAuthority',
       component: './ReaderAuthority',
+      layout: 'mix',
     },
     // {
     //   name: '图书荐购',
