@@ -9,7 +9,7 @@ export default defineConfig({
   request: {},
   layout: {
     locale: false,
-    siderWidth: 208,
+    // siderWidth: 208,
     ...defaultSettings,
   },
  routes,
