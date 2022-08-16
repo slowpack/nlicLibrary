@@ -13,6 +13,6 @@ export const layout = () => {
       locale: false,
     },
     // navTheme: 'dark',
-    title: '宁波大学园区图书馆', 
+    title: '鄞州区图书馆', 
   };
 };

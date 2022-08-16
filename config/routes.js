@@ -25,7 +25,7 @@ export default [
     {
       name: '借阅历史',
       path: '/borrowHistory',
-      component: './Table',
+      component: './BorrowHistory',
       layout: 'mix',
     },
     {
