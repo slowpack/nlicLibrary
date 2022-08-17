@@ -7,8 +7,12 @@ export default defineConfig({
   model: {},
   initialState: {},
   request: {},
+  // publicPath: './',
+  //   history: {
+  //       type: 'hash',
+  //   },
   layout: {
-    locale: false,
+       locale: false,
     // siderWidth: 208,
     ...defaultSettings,
   },

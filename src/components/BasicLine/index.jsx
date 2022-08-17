@@ -10,17 +10,43 @@ export default () => {
   }, []);
 
   const asyncFetch = () => {
-    fetch('http://192.168.1.2:8000/home/libraryList')
-      .then(res=>{
-        res.json().then((data)=>{
-            console.log(data.data);
-            setData(data.data)
-        })
-    })
-      .catch((error) => {
-        console.log('fetch data failed', error);
-      });
+    setData([{
+      "Date": "2022-08",
+      "scales": 5034
+    },
+    {
+      "Date": "2022-07",
+      "scales": 8955
+    },
+    {
+      "Date": "2022-06",
+      "scales": 6278
+    },
+    {
+      "Date": "2022-05",
+      "scales": 4195
+    },
+    {
+      "Date": "2022-04",
+      "scales": 5145
+    },
+    {
+      "Date": "2022-03",
+      "scales": 6207
+    }])
+  //   fetch('http://192.168.1.2:8000/home/libraryList')
+  //     .then(res=>{
+  //       res.json().then((data)=>{
+  //           console.log(data.data);
+  //           setData(data.data)
+  //       })
+  //   })
+  //     .catch((error) => {
+  //       console.log('fetch data failed', error);
+  //     });
   };
+  //先用模拟数据装一下
+  
   const config = {
     data,
     padding: 'auto',
