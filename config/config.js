@@ -1,24 +1,21 @@
-import routes from './routes'
+import routes from './routes';
 import { defineConfig } from '@umijs/max';
-import { defaultSettings } from "./defaultSettings";
+import { defaultSettings } from './defaultSettings';
 export default defineConfig({
   antd: {},
   access: {},
   model: {},
   initialState: {},
   request: {},
-  // publicPath: './',
+  publicPath: './',
   //   history: {
   //       type: 'hash',
   //   },
+  routes,
+  fastRefresh: true,
   layout: {
-       locale: false,
-    // siderWidth: 208,
     ...defaultSettings,
   },
- routes,
-  npmClient: 'pnpm',
-  // dynamicImport: {
-  //   loading: '@ant-design/pro-layout/es/PageLoading',
-  // },
+
+  // npmClient: 'pnpm',
 });

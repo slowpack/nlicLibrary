@@ -2,32 +2,26 @@ import React from 'react';
 import { ProCard, StatisticCard } from '@ant-design/pro-components';
 import RcResizeObserver from 'rc-resize-observer';
 import { useState } from 'react';
-import BasicLine from '../BasicLine'
+import BasicLine from '../BasicLine';
 const { Statistic } = StatisticCard;
 
 export default () => {
   const [responsive, setResponsive] = useState(false);
-const getDate=(()=>{
-  let date = new Date();
-        let year = date.getFullYear().toString();
-        let month = (date.getMonth()+1).toString();
-        let day = date.getDate().toString();
-        return year+'年'+month+'月'+day+'日';
-})()
+  const getDate = (() => {
+    let date = new Date();
+    let year = date.getFullYear().toString();
+    let month = (date.getMonth() + 1).toString();
+    let day = date.getDate().toString();
+    return year + '年' + month + '月' + day + '日';
+  })();
   return (
     <RcResizeObserver
       key="resize-observer"
-      onResize={(offset) => {
+      onResize={offset => {
         setResponsive(offset.width < 596);
       }}
     >
-      <ProCard
-        title="访客数据"
-        extra={getDate}
-        split={responsive ? 'horizontal' : 'vertical'}
-        headerBordered
-        bordered
-      >
+      <ProCard title="访客数据" extra={getDate} split={responsive ? 'horizontal' : 'vertical'} headerBordered bordered>
         <ProCard split="horizontal">
           <ProCard split="horizontal">
             <ProCard split="vertical">
@@ -63,7 +57,7 @@ const getDate=(()=>{
               />
             </ProCard>
           </ProCard>
-          <BasicLine/>
+          <BasicLine />
         </ProCard>
       </ProCard>
     </RcResizeObserver>

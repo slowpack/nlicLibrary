@@ -9,5 +9,4 @@ const useUser = () => {
     setName,
   };
 };
-
 export default useUser;
