@@ -1,25 +1,8 @@
 import React, { useState } from 'react';
-import { LikeOutlined, MessageOutlined, StarOutlined } from '@ant-design/icons';
 import { ProList } from '@ant-design/pro-components';
 import { Button, Modal, Tag } from 'antd';
 import { PageContainer } from '@ant-design/pro-components';
 import { bookStore } from '@/models/bookStore';
-
-// const dataSource = myBooks.map(i => i.title);
-// const dataSource = [
-//   {
-//     title: '语雀的天空',
-//   },
-//   {
-//     title: 'Ant Design',
-//   },
-//   {
-//     title: '蚂蚁金服体验科技',
-//   },
-//   {
-//     title: 'TechUI',
-//   },
-// ];
 export default function Index() {
   const myBooks = bookStore(i => i.mybooks);
   const titleList = myBooks.map(i => {
@@ -27,10 +10,7 @@ export default function Index() {
   });
   const dataSource = titleList;
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const showModal = (a, b) => {
-    // setIsModalVisible(true);
-    console.log('fff', a, b);
-  };
+
   const handleOk = () => {
     setIsModalVisible(false);
   };
@@ -51,7 +31,6 @@ export default function Index() {
         itemLayout="vertical"
         rowKey="id"
         dataSource={dataSource}
-        onItem={showModal}
         metas={{
           title: {
             dataIndex: 'title',

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button, Form, Input, Select } from 'antd';
-
 import ManySelect from './ManySelect';
 import { PageContainer } from '@ant-design/pro-components';
 const { Option } = Select;
@@ -12,7 +11,6 @@ export default function Index() {
   const onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo);
   };
-
   return (
     <PageContainer>
       <Form
