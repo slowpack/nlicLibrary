@@ -5,17 +5,22 @@ import { useNavigate } from '@umijs/max';
 import { Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { useLogin } from '@/models/login';
-
+import { message } from 'antd';
 const NormalLoginForm = () => {
   const navigate = useNavigate();
   const haveLogin = useLogin(state => state.haveLogin);
   const login = useLogin(state => state.login);
+  const tips = () => {
+    message.info('账号是:admin,密码是:1');
+  };
   const onFinish = (values: any) => {
     console.log('得到数据: ', values);
     if (values.username === 'admin' && values.password === '1') {
       // history.push('/home');
       navigate('/home');
       login();
+    } else {
+      tips();
     }
   };
 

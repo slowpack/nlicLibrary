@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LikeOutlined, MessageOutlined, StarOutlined } from '@ant-design/icons';
 import { ProList } from '@ant-design/pro-components';
-import { Button, Tag } from 'antd';
+import { Button, Modal, Tag } from 'antd';
 import { PageContainer } from '@ant-design/pro-components';
 import { bookStore } from '@/models/bookStore';
 
@@ -26,6 +26,18 @@ export default function Index() {
     return { title: i.title, img: i.img, summary: i.summary };
   });
   const dataSource = titleList;
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const showModal = (a, b) => {
+    // setIsModalVisible(true);
+    console.log('fff', a, b);
+  };
+  const handleOk = () => {
+    setIsModalVisible(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
   return (
     <PageContainer>
       <ProList<{ title: string }>
@@ -39,6 +51,7 @@ export default function Index() {
         itemLayout="vertical"
         rowKey="id"
         dataSource={dataSource}
+        onItem={showModal}
         metas={{
           title: {
             dataIndex: 'title',
@@ -50,7 +63,13 @@ export default function Index() {
             dataIndex: 'summary',
           },
         }}
-      />
+      >
+        <Modal title="Basic Modal" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
+          <p>Some contents...</p>
+          <p>Some contents...</p>
+          <p>Some contents...</p>
+        </Modal>
+      </ProList>
     </PageContainer>
   );
 }
