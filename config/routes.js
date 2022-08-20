@@ -11,12 +11,19 @@
 export default [
   {
     path: '/',
-    redirect: '/home',
+    redirect: '/index',
   },
   {
-    name: '主页',
-    path: '/home',
+    name: '首页',
+    path: '/index',
+    component: './Index',
     hideInMenu: true,
+    menuRender: false,
+  },
+  {
+    name: '欢迎拜访',
+    path: '/home',
+    // hideInMenu: true,
     component: './Home',
   },
   {
@@ -26,13 +33,7 @@ export default [
     hideInMenu: true,
     menuRender: false,
   },
-  {
-    name: '首页',
-    path: '/index',
-    component: './Index',
-    hideInMenu: true,
-    menuRender: false,
-  },
+
   {
     name: '馆藏搜索',
     path: '/bookSearch',
@@ -61,9 +62,15 @@ export default [
     path: '/myBook',
     component: './MyBook',
   },
+  // {
+  //   name: '个人空间',
+  //   path: '/userSpace',
+  //   component: './UserSpace',
+  // },
   {
     name: '个人空间',
     path: '/userSpace',
-    component: './UserSpace',
+    component: './AccountSettings',
+    // access: 'haveLogin',
   },
 ];

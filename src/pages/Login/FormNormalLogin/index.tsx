@@ -1,39 +1,38 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './index.less';
-import { history } from '@umijs/max';
+// import { history } from '@umijs/max';
+import { useNavigate } from '@umijs/max';
 import { Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import { useLogin } from '@/models/login';
 
 const NormalLoginForm = () => {
+  const navigate = useNavigate();
+  const haveLogin = useLogin(state => state.haveLogin);
+  const login = useLogin(state => state.login);
   const onFinish = (values: any) => {
-    console.log('Received values of form: ', values);
+    console.log('得到数据: ', values);
+    if (values.username === 'admin' && values.password === '1') {
+      // history.push('/home');
+      navigate('/home');
+      login();
+    }
   };
 
+  useEffect(() => {
+    if (haveLogin) {
+      // history.push('/home');
+      navigate('/home');
+    }
+  }, []);
+
   return (
-    <Form
-      name="normal_login"
-      className="login-form"
-      initialValues={{ remember: true }}
-      onFinish={onFinish}
-    >
-      <Form.Item
-        name="username"
-        rules={[{ required: true, message: 'Please input your Username!' }]}
-      >
-        <Input
-          prefix={<UserOutlined className="site-form-item-icon" />}
-          placeholder="Username"
-        />
+    <Form name="normal_login" className="login-form" initialValues={{ remember: true }} onFinish={onFinish}>
+      <Form.Item name="username" rules={[{ required: true, message: '填admin' }]}>
+        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
       </Form.Item>
-      <Form.Item
-        name="password"
-        rules={[{ required: true, message: 'Please input your Password!' }]}
-      >
-        <Input
-          prefix={<LockOutlined className="site-form-item-icon" />}
-          type="password"
-          placeholder="Password"
-        />
+      <Form.Item name="password" rules={[{ required: true, message: '密码是1' }]}>
+        <Input prefix={<LockOutlined className="site-form-item-icon" />} type="password" placeholder="Password" />
       </Form.Item>
       <Form.Item>
         <Form.Item name="remember" valuePropName="checked" noStyle>
@@ -46,12 +45,7 @@ const NormalLoginForm = () => {
       </Form.Item>
 
       <Form.Item>
-        <Button
-          type="primary"
-          onClick={() => history.push('home')}
-          htmlType="submit"
-          className="login-form-button"
-        >
+        <Button type="primary" htmlType="submit" className="login-form-button">
           登录
         </Button>
         或者 <a href="">注册</a>

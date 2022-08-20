@@ -4,9 +4,14 @@ import React from 'react';
 import { enquireScreen } from 'enquire-js';
 
 import Banner0 from './Banner0';
+import Content0 from './Content0';
 import Footer1 from './Footer1';
 
-import { Banner00DataSource, Footer10DataSource } from './data.source';
+import {
+  Banner00DataSource,
+  Content00DataSource,
+  Footer10DataSource,
+} from './data.source';
 import './less/antMotionStyle.less';
 
 let isMobile;
@@ -49,6 +54,12 @@ export default class Home extends React.Component {
         id="Banner0_0"
         key="Banner0_0"
         dataSource={Banner00DataSource}
+        isMobile={this.state.isMobile}
+      />,
+      <Content0
+        id="Content0_0"
+        key="Content0_0"
+        dataSource={Content00DataSource}
         isMobile={this.state.isMobile}
       />,
       <Footer1

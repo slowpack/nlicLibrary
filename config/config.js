@@ -7,10 +7,10 @@ export default defineConfig({
   model: {},
   initialState: {},
   request: {},
-  publicPath: './',
-  //   history: {
-  //       type: 'hash',
-  //   },
+  // publicPath: './',
+  // history: {
+  //   type: 'hash',
+  // },
   routes,
   fastRefresh: true,
   layout: {
