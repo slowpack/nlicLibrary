@@ -1,7 +1,7 @@
 import routes from './routes';
 import { defineConfig } from '@umijs/max';
 import { defaultSettings } from './defaultSettings';
-import proxy from './proxy';
+// import proxy from './proxy';
 export default defineConfig({
   antd: {},
   access: {},
