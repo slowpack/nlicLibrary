@@ -15,12 +15,12 @@ export const searchList = create(() => ({
       hideInSearch: true,
     },
     {
-      title: '状态',
+      title: '状态 ',
       dataIndex: 'state',
       valueType: 'select',
       valueEnum: {
-        in: { text: '在馆', status: 'Success' },
-        out: { text: '外借', status: 'error' },
+        in: { text: '在馆 ', status: 'Success' },
+        out: { text: '外借 ', status: 'error' },
       },
     },
     {

@@ -4,11 +4,7 @@ import { bookStore } from '@/models/bookStore';
 import { searchList } from '@/models/listShow';
 const TableList: React.FC<unknown> = () => {
   const booksInfo = bookStore(state => state.books.data);
-  // const actionRef = useRef<ActionType>();
-  // const columns: ProColumns<API.Product>[] = [
-  //   { title: 'id', dataIndex: 'id' },
-  //   { title: 'id', dataIndex: 'id' },
-  // ];
+
   const columns = searchList(i => i.searchList);
 
   return (

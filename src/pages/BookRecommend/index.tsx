@@ -1,16 +1,18 @@
 import React from 'react';
-import { Button, Form, Input, Select } from 'antd';
+import { Button, message, Form, Input, Select } from 'antd';
 import ManySelect from './ManySelect';
 import { PageContainer } from '@ant-design/pro-components';
 const { Option } = Select;
 export default function Index() {
   const onFinish = (values: any) => {
     console.log('Success:', values);
+    message.info('提交成功');
   };
 
   const onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo);
   };
+
   return (
     <PageContainer>
       <Form
@@ -74,7 +76,7 @@ export default function Index() {
           <Input />
         </Form.Item>
         <Form.Item label="ISBN" name="isbn">
-          <Input />
+          <Input placeholder="为了更好帮助你寻找,请填写" />
         </Form.Item>
         <Form.Item label="出版社" name="publisher">
           <Input />
@@ -92,7 +94,7 @@ export default function Index() {
           }}
         >
           <Button type="primary" htmlType="submit">
-            Submit
+            提交
           </Button>
         </Form.Item>
       </Form>

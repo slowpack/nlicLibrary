@@ -6,13 +6,12 @@
  * https://pro.ant.design/docs/deploy
  */
 export default {
-  dev: {
-    '/api/': {
-      target: 'http://localhost:8000',
-      changeOrigin: true,
-      pathRewrite: { '^': '' },
-    },
+  '/searchBook': {
+    target: `http://118.31.113.49/api/isbn/v1/index`,
+    changeOrigin: true,
+    pathRewrite: { '^': '' },
   },
+
   // test: {
   //   '/api/': {
   //     target: 'https://preview.pro.ant.design',

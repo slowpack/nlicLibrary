@@ -37,7 +37,7 @@ export default [
   {
     name: '馆藏搜索',
     path: '/bookSearch',
-    component: './Table',
+    component: './BookSearch',
     // layout: 'mix',
   },
   {
